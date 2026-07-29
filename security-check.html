@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security Check</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security Check</title>
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background: #f4f4f4;
+    }
+    .box {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+  </style>
 </head>
 <body>
-    <h2>Just making sure you're not a bot ! 😀/h2>
-        <!-- hCaptcha widget -->
-        <div class="h-captcha" data-sitekey="a678a40e-84c8-4c3e-89fc-9f9c311c55aa"></div>
+  <div class="box">
+    <h2>Security Check</h2>
+    <p>Please verify you are human to continue !</p>
+    <div class="h-captcha" 
+         data-sitekey="YOUR-HCAPTCHA-SITE-KEY" 
+         data-callback="onVerify">
+    </div>
+  </div>
 
-    <!-- hCaptcha script -->
-    <script src="https://hcaptcha.com/1/api.js" async defer></script>
+  <script>
+    function onVerify(token) {
+      // Store verification in localStorage so user doesn't see it again
+      localStorage.setItem("verified", "true");
+      // Redirect to homepage
+      window.location.href = "index.html";
+    }
+  </script>
 </body>
 </html>
