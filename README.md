@@ -1,6 +1,6 @@
 # Wiki Management Guide
 Our website is here:
-gryffindor-sweater122.github.io
+https://gryffindor-sweater122.github.io/wiki-management-guide
 
 Email:
 AIN: htmlaccountrecovery@atomicmail.io
