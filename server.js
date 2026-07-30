@@ -7,7 +7,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.post("/verify", async (req, res) => {
   const token = req.body["h-captcha-response"];
-  const secret = process.env.ES_1ad8c3b9538d4630bc0fbc3659126eb3; // store in environment variable
+  const secret = process.env.ES_8a1ac04ced0945daa9079692ea9b9e6c; // store in environment variable
 
   const verifyURL = "https://hcaptcha.com/siteverify";
   const response = await fetch(verifyURL, {
